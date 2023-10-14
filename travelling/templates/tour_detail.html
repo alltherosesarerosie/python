@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<center><br>
+    <h1>Detail Information</h1>
+    <h2>{{tour_key.tour_name}}</h2>
+    <p style="max-width: 600px;">{{tour_key.description}}</p><p><b>Type of tour: </b>
+        {{tour_key.tour_type}}</p>
+    <img src="{{tour_key.image.url}}" alt="Tour Photo">
+    <p><b>Price of tour: </b>
+        {{tour_key.price}}</p>
+    <iframe src="{{tour_key.video}}" width="640" height="360" frameborder="0"></iframe>
+
+    <p><b>Start of tour: </b>{{tour_key.start_date}}</p>
+    <p><b>End of tour: </b>{{tour_key.end_date}}</p>
+</center>
+{% include 'footer.html' %}
+</body>
+</html>
