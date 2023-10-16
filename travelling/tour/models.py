@@ -18,3 +18,20 @@ class Tour(models.Model):
 
     def __str__(self):
         return self.tour_name
+
+class ReviewTour(models.Model):
+    STARS = (
+        ('*', '*'),
+        ('**', '**'),
+        ('***', '***'),
+        ('****', '****'),
+        ('*****', '*****'),
+
+    )
+    title_tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='review_object')
+    text_review = models.TextField()
+    rate_stars = models.CharField(max_length=100, choices=STARS)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Review for {self.title_tour}"
