@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+<center>
+<br><h1>Hot 3 Tours for this mounth!!!</h1><br>
+<div class="flex">
+ {% for i in tour_key %}
+    <div class="card" style="width: 22rem;">
+      <img src="{{i.image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <a href="/tour_list/{{i.id}}/delete/" class="btn btn-primary">Delete</a>
+      </div>
+</div><br><br>
+   {% endfor %}
+     </div></center>
+{% include 'footer.html' %}
