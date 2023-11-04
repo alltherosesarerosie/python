@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleting</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this Tour?</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">YES!</button>
+    <button><a href="/">NO!</a></button>
+</form>
+</body>
+</html>

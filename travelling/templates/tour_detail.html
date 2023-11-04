@@ -8,17 +8,19 @@
 </head>
 <body>
 <center><br>
+    <button><a href="/tour_list/{{object.id}}/update/">Update</a></button>
+    <button><a href="/tour_list/{{object.id}}/delete/">Delete</a></button>
     <h1>Detail Information</h1>
-    <h2>{{tour_key.tour_name}}</h2>
-    <p style="max-width: 600px;">{{tour_key.description}}</p><p><b>Type of tour: </b>
-        {{tour_key.tour_type}}</p>
-    <img src="{{tour_key.image.url}}" alt="Tour Photo">
+    <h2>{{object.tour_name}}</h2>
+    <p style="max-width: 600px;">{{object.description}}</p><p><b>Type of tour: </b>
+        {{object.tour_type}}</p>
+    <img src="{{object.image.url}}" alt="Tour Photo">
     <p><b>Price of tour: </b>
-        {{tour_key.price}}</p>
-    <iframe src="{{tour_key.video}}" width="640" height="360" frameborder="0"></iframe>
+        {{object.price}}</p>
+    <iframe src="{{object.video}}" width="640" height="360" frameborder="0"></iframe>
 
-    <p><b>Start of tour: </b>{{tour_key.start_date}}</p>
-    <p><b>End of tour: </b>{{tour_key.end_date}}</p>
+    <p><b>Start of tour: </b>{{object.start_date}}</p>
+    <p><b>End of tour: </b>{{object.end_date}}</p>
 
 
     <table border="2">
@@ -26,7 +28,7 @@
             <th>Review creation date</th> <th>Comment</th> <th><R></R>ating</th>
         </tr>
 
-        {% for i in tour_key.review_object.all %}
+        {% for i in object.review_object.all %}
         <tr>
             <td>{{i.created_at}}</td> <td>{{i.text_review}}</td> <td>{{i.rate_stars}}</td>
         </tr>
