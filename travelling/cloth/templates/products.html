@@ -1,0 +1,9 @@
+
+{% block title %}All Products{% endblock %}
+
+{% block content %}
+    <h2>All Products</h2>
+    {% for product in products %}
+        <p>{{ product.name }} - {{ product.created_at }}</p>
+    {% endfor %}
+{% endblock %}

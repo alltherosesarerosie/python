@@ -1,0 +1,9 @@
+
+{% block title %}Customer Orders{% endblock %}
+
+{% block content %}
+    <h2>Orders for Customer: {{ customer.name }}</h2>
+    {% for order in orders %}
+        <p>Order ID: {{ order.id }} - Products: {% for product in order.products.all %}{{ product.name }}, {% endfor %}</p>
+    {% endfor %}
+{% endblock %}

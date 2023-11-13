@@ -1,0 +1,13 @@
+<!-- tag_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tag View</title>
+</head>
+<body>
+    <h1>Products with Tag: {{ tag_name }}</h1>
+    {% for product in products %}
+        <p>{{ product.name }} - {{ product.created_at }}</p>
+    {% endfor %}
+</body>
+</html>
